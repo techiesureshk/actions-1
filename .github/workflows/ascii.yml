@@ -9,22 +9,7 @@ jobs:
         steps:
         - name: new checkout
           uses: actions/checkout@v4
-        - name: List and read files
-          run: |
-           echo "my first github-actions"
-           ls -ltra
-           cat README.md
-        - name: Install cowsay
-          run: sudo apt-get install cowsay -y
-
-        - name: Generate ASCII Artwork
-          run: cowsay -f ghostbusters "run for cover,I am a ghostbusters...RAWR" >> ghostbusters.txt
-
-        - name: Test File Exists
-          run: grep -i " ghostbusters" ghostbusters.txt
-
-        - name: Read File
-          run: cat ghostbusters.txt
-
-        - name: List Repo Files
-          run: ls -ltra   
+        
+        - name: execute shell script
+          run: ./ascii-script.sh
+             
