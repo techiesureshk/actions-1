@@ -5,7 +5,7 @@ jobs:
     first_job:
         runs-on: ubuntu-latest
         steps:
-        -name: checkout
+        -name: new checkout
          uses: actions/checkout@v4
         -name: welcome message
          run: echo "my first github-actions"
