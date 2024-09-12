@@ -43,4 +43,5 @@ jobs:
         
         - name: execute shell script
           run: |
+              cd /home/runner/work/actions-1/actions-1/
               ls -la dragon* ghost*
