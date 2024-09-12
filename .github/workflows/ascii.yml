@@ -18,13 +18,13 @@ jobs:
           run: sudo apt-get install cowsay -y
 
         - name: Generate ASCII Artwork
-          run: cowsay -f horse "run for cover,I am a horse...RAWR" >> horse.txt
+          run: cowsay -f ghostbusters "run for cover,I am a ghostbusters...RAWR" >> ghostbusters.txt
 
         - name: Test File Exists
-          run: grep -i " horse" horse.txt
+          run: grep -i " ghostbusters" ghostbusterse.txt
 
         - name: Read File
-          run: cat horse.txt
+          run: cat ghostbusters.txt
 
         - name: List Repo Files
           run: ls -ltra   
