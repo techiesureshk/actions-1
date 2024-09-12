@@ -9,7 +9,7 @@ jobs:
         steps:
         - name: new checkout
           uses: actions/checkout@v4
-        - name: execute shell script
+        - name: list shell script
           run: ls -lrt
         
         - name: execute shell script
