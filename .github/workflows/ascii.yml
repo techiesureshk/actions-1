@@ -10,11 +10,11 @@ jobs:
         - name: new checkout
           uses: actions/checkout@v4
         - name: list shell script
-          run: ls -lrt
+          run: ls -lrta
         
         - name: execute shell script
           run: |
-            chmod +x ascii-script.sh
-            ./ascii-script.sh
+            chmod +x ascii-scripts.sh
+            ./ascii-scripts.sh
 
              
