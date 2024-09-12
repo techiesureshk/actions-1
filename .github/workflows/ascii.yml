@@ -21,7 +21,7 @@ jobs:
           run: cowsay -f ghostbusters "run for cover,I am a ghostbusters...RAWR" >> ghostbusters.txt
 
         - name: Test File Exists
-          run: grep -i " ghostbusters" ghostbusterse.txt
+          run: grep -i " ghostbusters" ghostbusters.txt
 
         - name: Read File
           run: cat ghostbusters.txt
