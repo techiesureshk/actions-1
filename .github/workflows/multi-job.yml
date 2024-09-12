@@ -40,4 +40,5 @@ jobs:
           run: ls -lrta
         
         - name: execute shell script
-          run: ls -la
+          run: |
+              ls -la dragon* ghost*
