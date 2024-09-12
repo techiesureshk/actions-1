@@ -14,6 +14,7 @@ jobs:
           run: |
            sudo apt-get install cowsay -y
            cowsay -f ghostbusters "run for cover,I am a ghostbusters...RAWR" >> ghostbusters.txt
+           pwd
            sleep 30
            
     test_job:
@@ -29,6 +30,7 @@ jobs:
             sudo apt-get install cowsay -y
             cowsay -f dragon "run for cover,I am a dragon...RAWR" >> dragon.txt
             ls -lrta
+            pwd
             sleep 20
     
     deploy_job:
