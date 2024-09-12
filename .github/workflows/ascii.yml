@@ -18,7 +18,7 @@ jobs:
           run: sudo apt-get install cowsay -y
 
         - name: Generate ASCII Artwork
-          run: cowsay -f horse "run for cover,I am a dragon...RAWR" >> horse.txt
+          run: cowsay -f horse "run for cover,I am a horse...RAWR" >> horse.txt
 
         - name: Test File Exists
           run: grep -i " horse" horse.txt
