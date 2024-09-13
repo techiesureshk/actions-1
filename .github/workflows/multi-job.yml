@@ -11,11 +11,16 @@ jobs:
           run: ls -lrta
         
         - name: execute shell script
-          run: |
-           sudo apt-get install cowsay -y
-           cowsay -f ghostbusters "run for cover,I am a ghostbusters...RAWR" >> ghostbusters.txt
-           pwd
-           sleep 30
+          run: sudo apt-get install cowsay -y
+
+        - name: copy to file
+          run:  cowsay -f ghostbusters "run for cover,I am a ghostbusters...RAWR" >> ghostbusters.txt
+        
+        - name: upload txt file ghost busters  
+          uses: actions/upload-artifact@v4
+          with:
+            name: ghostbusters-text-file
+            path: ghostbusters.txt # or path/to/artifact
            
     test_job:
         runs-on: ubuntu-latest
@@ -31,8 +36,13 @@ jobs:
             sudo apt-get install cowsay -y
             cowsay -f dragon "run for cover,I am a dragon...RAWR" >> dragon.txt
             ls -lrta
-            pwd
-            sleep 20
+        - name: upload txt file dragon 
+          uses: actions/upload-artifact@v4
+          with:
+            name: dragon-text-file
+            path: dragon.txt # or path/to/artifact
+
+        
     
     deploy_job:
         runs-on: ubuntu-latest
@@ -43,7 +53,8 @@ jobs:
         - name: list shell script
           run: ls -lrta
         
-        - name: execute shell script
-          run: |
-              cd /home/runner/work/actions-1/actions-1/
-              ls -la dragon* ghost*
+        - name: download txt file dragon 
+          uses: actions/download-artifact@v4
+          with:
+            name: dragon-text-file
+          
